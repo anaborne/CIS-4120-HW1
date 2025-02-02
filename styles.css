@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+}
+
+.iphone {
+    width: 300px;
+    height: 630px;
+    background-color: black;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 8px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.screen-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pages-container {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.screen {
+    width: 290px;
+    height: 620px;
+    background-size: cover;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.screen:first-child {
+    width: 290px;
+    height: 620px;
+    background: url('cloudy-sky.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.forecast-screen {
+    background-color: #9ED0F9;
+}
+
+.notch {
+    width: 100px;
+    height: 20px;
+    background: black;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.content {
+    margin-top: 50px;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    color: white;
+}
+
+.city {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.temperature {
+    font-size: 85px;
+    font-weight: 500;
+    padding-left: 12px;
+}
+
+.degree {
+    font-size: 45px;
+    vertical-align: 30px;
+    display: inline-block;
+}
+
+.feels-like {
+    font-size: 10px;
+    font-weight: 50;
+}
+
+.temp-box {
+    width: 270px;
+    height: 250px;
+    background: #9ED0F9;
+    border-radius: 16px;
+    margin-top: 10px;
+}
+
+.label {
+    font-size: 8px;
+    color: white;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.indicator-bars {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px;
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+}
+
+.bar {
+    width: 10px;
+    height: 200px;
+    background: linear-gradient(to top, red, green);
+    border-radius: 10px;
+    position: relative;
+}
+
+.aqi {
+    background: linear-gradient(to top, #FF0000, #FF9900, #00FF6E);
+}
+
+.uv {
+    background: linear-gradient(to top, #FF00FF, #FFFF00);
+}
+
+.humidity {
+    background: linear-gradient(to top, #0174C7, #87CDFE);
+}
+
+.temp-range {
+    background: linear-gradient(to top, #FF0000, white);
+}
+
+.time {
+    background: linear-gradient(to top, black, gray);
+}
+
+.slider-circle {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.aqi .slider-circle {
+    bottom: 30%;
+}
+
+.uv .slider-circle {
+    bottom: 60%;
+}
+
+.humidity .slider-circle {
+    bottom: 50%;
+}
+
+.temp-range .slider-circle {
+    bottom: 80%;
+}
+
+.time .slider-circle {
+    bottom: 20%;
+}
+
+.info-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background: #9ED0F9;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    padding-top: 8px;
+}
+
+.info-label {
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.precipitation-amount {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.chance-of-precipitation {
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.wind-speed {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.wind-direction {
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.page-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: white;
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 40px;
+    text-align: center;
+    font-family: Inter, sans-serif;
+    color: white;
+}
+
+.forecast-item {
+    width: 270px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    border-radius: 15px;
+    background: rgba(200, 200, 200, 0.3);
+    background-image: url('cloudy-sky.jpg');
+    background-size: cover;
+}
+
+.forecast-item span:first-child {
+    text-align: left;
+    flex: 1;
+}
+
+.forecast-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
